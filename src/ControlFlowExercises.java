@@ -91,12 +91,10 @@ public class ControlFlowExercises {
 //        4. Convert given number grades into letter grades
 
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Continue? [Y/N] ");
-        String userInput = scanner.next();
 
-        boolean confirmation = userInput.equals("Y");
+        boolean confirmation;
 
-        if (confirmation){
+        do {
             System.out.print("Input a numerical grade from 0 to 100: ");
             int userGrade = scanner.nextInt();
 
@@ -111,9 +109,11 @@ public class ControlFlowExercises {
             } else {
                 System.out.println("F");
             }
-        } else {
-            System.out.println("See you next time!");
-        }
+
+            System.out.print("Continue? [Y/N] ");
+            String userInput = scanner.next();
+            confirmation = userInput.equalsIgnoreCase("Y");
+        } while (confirmation);
 
     }
 }
