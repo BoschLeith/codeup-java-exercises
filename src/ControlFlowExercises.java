@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class ControlFlowExercises {
     public static void main(String[] args){
 
@@ -48,17 +50,42 @@ public class ControlFlowExercises {
 
 //        2. Fizzbuzz
 
-        for (int i = 1; i <= 100; i++){
-//            System.out.println(i);
-            if (i % 15 == 0){
-                System.out.println("FizzBuzz");
-            } else if (i % 3 == 0){
-                System.out.println("Fizz");
-            } else if (i % 5 == 0){
-                System.out.println("Buzz");
-            } else {
-                System.out.println(i);
+//        for (int i = 1; i <= 100; i++){
+//            if (i % 15 == 0){
+//                System.out.println("FizzBuzz");
+//            } else if (i % 3 == 0){
+//                System.out.println("Fizz");
+//            } else if (i % 5 == 0){
+//                System.out.println("Buzz");
+//            } else {
+//                System.out.println(i);
+//            }
+//        }
+
+//        3. Display a table of powers
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Continue? [Y/N] ");
+        String userInput = scanner.next();
+
+        boolean confirmation = userInput.equals("Y");
+
+        if (confirmation){
+            System.out.print("What number would you like to go up to? ");
+            int userMulti = scanner.nextInt();
+
+            System.out.println("Here is your table!");
+            System.out.println("number | squared | cubed\n------ | ------- | -----");
+
+            for (int i = 1; i <= userMulti; i ++){
+                int square = i * i;
+                int cubed = i * i * i;
+                System.out.printf("%d      |% -9d|% d     \n", i, square, cubed);
             }
+        } else {
+            System.out.println("See you next time!");
         }
+
     }
 }
