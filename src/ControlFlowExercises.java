@@ -81,7 +81,7 @@ public class ControlFlowExercises {
 //            for (int i = 1; i <= userMulti; i ++){
 //                int square = i * i;
 //                int cubed = i * i * i;
-//                System.out.printf("%d      |% -9d|% d     \n", i, square, cubed);
+//                System.out.printf("%-7d|%-9d|%-6d\n", i, square, cubed);
 //            }
 //        } else {
 //            System.out.println("See you next time!");
