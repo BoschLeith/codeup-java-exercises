@@ -5,14 +5,11 @@ public class ConsoleExercises {
     public static void main(String[] args){
 
 //        double pi = 3.14159;
-//
 //        System.out.printf("The value of pi is approximately %.2f.", pi);
 
         Scanner scanner = new Scanner(System.in);
 
-
-
-//        1. Prompt a user to enter a integer and store that value in an int variable using the nextInt method.
+//        1. Prompt a user to enter an integer and store that value in an int variable using the nextInt method.
 
 //        System.out.print("Enter an integer: ");
 //        int userInput = scanner.nextInt();
@@ -25,6 +22,13 @@ public class ConsoleExercises {
 //        System.out.println("" + scanner.next());
 //        System.out.println("" + scanner.next());
 
+//        *** Review Example ***
+//        System.out.print("Enter 3 words: ");
+//        String wordOne = scanner.next();
+//        String wordTwo = scanner.next();
+//        String wordThree = scanner.next();
+//        System.out.printf("1: %s\n2: %s\n3: %s", wordOne, wordTwo, wordThree);
+
 //        3. Prompt a user to enter a sentence, then store that sentence in a String variable using the next method. Then, display that sentence back to the user.
 //        4. Rewrite the above example using the nextLine method.
 
@@ -34,6 +38,7 @@ public class ConsoleExercises {
 
 //        1. Prompt the user to enter values of length and width of a classroom at Codeup. Use the nextLine method to get user input and parse the resulting string to a numeric type.
 
+//        *** First attempt ***
 //        System.out.print("Enter the length, width, and height of the room: ");
 //        String userLength = scanner.next();
 //        String userWidth = "" + scanner.next();
