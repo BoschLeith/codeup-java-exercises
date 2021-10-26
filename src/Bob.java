@@ -9,7 +9,7 @@ public class Bob {
 
         do {
             System.out.print("Ask Bob something: ");
-            String userInput = scanner.next();
+            String userInput = scanner.nextLine();
 
             if (userInput.endsWith("?")) {
                 System.out.println("Sure.");
