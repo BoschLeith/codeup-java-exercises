@@ -11,25 +11,27 @@ public class HighLow {
 
         int randomNumber = randomNum();
 
-        int tries = 0;
+        int tries = 5;
 
-        while (tries <= 5){
-            System.out.println("Guess a number between 1-100. You have 5 guesses.");
+        while (tries > 0){
+            System.out.printf("Guess a number between 1-100. You have %d guesses.\n", tries);
             System.out.print("Guess a number: ");
             int userInput = scanner.nextInt();
-            tries++;
+            tries--;
 
             if (userInput > randomNumber){
                 System.out.println("Lower");
             } else if (userInput < randomNumber){
                 System.out.println("Higher");
-            } else {
+            } else if (userInput == randomNumber) {
                 System.out.println("You got it! Good Guess!");
-                System.out.printf("It took you: %d guesses", tries);
+                System.out.printf("It took you: %d guesses", tries -1);
                 break;
             }
         }
-        System.out.println("You're out of guesses. Better luck next time!");
+        if (tries == 0){
+            System.out.println("You're out of guesses. Better luck next time!");
+        }
     }
 
     public static int randomNum(){
