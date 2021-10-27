@@ -3,13 +3,13 @@ import java.util.Scanner;
 public class MethodsExercises {
 
     public static void main(String[] args){
-//        userInput();
-//        userInt();
+        userInputCalc();
+        userInt();
         userFactorial();
-//        numSides();
+        numSides();
     }
 
-    public static void userInput(){
+    public static void userInputCalc(){
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter two numbers: ");
         int num1 = scanner.nextInt();
@@ -53,13 +53,16 @@ public class MethodsExercises {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter a number between 1 and 10: ");
         int userInput = scanner.nextInt();
+
         return getInteger(userInput, 1, 10);
     }
 
     public static int getInteger(int userInput, int min, int max){
         if (userInput >= min && userInput <= max){
+            System.out.printf("%d is between 1 and 10\n", userInput);
             return userInput;
         }
+        System.out.printf("%d is not between 1 and 10. Try again.\n", userInput);
         return userInt();
     }
 
@@ -68,9 +71,8 @@ public class MethodsExercises {
         Scanner scanner = new Scanner(System.in);
 
         boolean confirmation;
-        boolean continuation = true;
 
-        do {
+            System.out.println("Calculate the factorial");
             int userInput = userInt();
             System.out.println("Your number is = " + userInput);
             System.out.printf("The factorial for %d is %d\n", userInput, factorial(userInput));
@@ -83,11 +85,7 @@ public class MethodsExercises {
             if (confirmation){
                 System.out.printf("The factorial table for %d is:\n", userInput);
                 factorialTable(userInput);
-                continuation = false;
             }
-
-        } while (continuation);
-
     }
 
     public static void factorialTable(int userInt){
@@ -128,9 +126,9 @@ public class MethodsExercises {
         int min = 1;
         int range = userSides - min + 1;
 
-        for (int i = 0; i < 2; i++) {
+        for (int i = 1; i < 3; i++) {
             int rand = (int)(Math.random() * range) + min;
-            System.out.println(rand);
+            System.out.printf("Dice %d: %d\n", i, rand);
         }
     }
 
