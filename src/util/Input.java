@@ -2,7 +2,7 @@ package util;
 
 import java.util.Scanner;
 
-class Input {
+public class Input {
 	private Scanner scanner;
 
 	public Input(){
@@ -14,13 +14,13 @@ class Input {
 		return this.scanner.nextLine();
 	}
 
-	boolean yesNo(){
+	public boolean yesNo(){
 		System.out.print("Enter YES or NO: ");
 		String userInput = this.scanner.nextLine();
 		return userInput.equalsIgnoreCase("Y") || userInput.equalsIgnoreCase("Yes");
 	}
 
-	int getInt(int min, int max){
+	public int getInt(int min, int max){
 		System.out.printf("Enter a number between %d and %d: ", min, max);
 		int userInput = this.scanner.nextInt();
 
@@ -32,14 +32,14 @@ class Input {
 		return getInt(min, max);
 	}
 
-	int getInt(){
+	public int getInt(){
 		System.out.print("Enter an integer: ");
 		int userInput = this.scanner.nextInt();
 		System.out.printf("Your integer is: %d\n", userInput);
 		return userInput;
 	}
 
-	double getDouble(double min, double max){
+	public double getDouble(double min, double max){
 		System.out.printf("Enter a number between %.2f and %.2f: ", min,  max);
 		double userInput = this.scanner.nextDouble();
 
@@ -51,10 +51,9 @@ class Input {
 		return getDouble(min, max);
 	}
 
-	double getDouble(){
-		System.out.print("Enter a double: ");
-		double userInput = this.scanner.nextDouble();
-		System.out.printf("Your double is: %.2f\n", userInput);
-		return userInput;
+	public double getDouble(){
+//		System.out.print("Enter a double: ");
+//		System.out.printf("Your double is: %.2f\n", userInput);
+		return this.scanner.nextDouble();
 	}
 }
