@@ -10,7 +10,7 @@ public class Input {
 	}
 
 	public String getString(){
-		System.out.print("Enter a string: ");
+//		System.out.print("Enter a string: ");
 		return this.scanner.nextLine();
 	}
 
@@ -33,9 +33,9 @@ public class Input {
 	}
 
 	public int getInt(){
-		System.out.print("Enter an integer: ");
-		int userInput = this.scanner.nextInt();
-		System.out.printf("Your integer is: %d\n", userInput);
+//		System.out.print("Enter an integer: ");
+		int userInput = Integer.parseInt(this.scanner.nextLine());
+//		System.out.printf("Your integer is: %d\n", userInput);
 		return userInput;
 	}
 
