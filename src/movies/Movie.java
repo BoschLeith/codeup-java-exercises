@@ -14,11 +14,19 @@ public class Movie {
 		category = "Undefined";
 	}
 
-	public String getName(String name){
-		return this.name;
+	public String getName(){
+		return name;
 	}
 
-	public String getCategory(String category){
-		return this.category;
+	public String getCategory(){
+		return category;
+	}
+
+	public void setName(){
+		this.name = name;
+	}
+
+	public void setCategory(){
+		this.category = category;
 	}
 }
