@@ -1,5 +1,7 @@
 package movies;
 
+import java.util.Arrays;
+
 public class Movie {
 	private String name;
 	private String category;
@@ -28,5 +30,11 @@ public class Movie {
 
 	public void setCategory(){
 		this.category = category;
+	}
+
+	static Movie[] addMovie(Movie[] array, Movie movie){
+		Movie[] newArray = Arrays.copyOf(array, array.length + 1);
+		newArray[newArray.length - 1] = movie;
+		return newArray;
 	}
 }
