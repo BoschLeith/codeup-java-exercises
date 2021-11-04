@@ -1,4 +1,4 @@
-package card_games;
+package CardGames;
 
 public class Player {
 	public int gamesWon;

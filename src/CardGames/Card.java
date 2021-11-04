@@ -1,8 +1,4 @@
-package card_games;
-
-import movies.Movie;
-
-import java.util.Arrays;
+package CardGames;
 
 public class Card {
 	public String suit;
