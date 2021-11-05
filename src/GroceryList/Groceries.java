@@ -27,10 +27,11 @@ public class Groceries {
 		String userItem = input.getString();
 		System.out.printf("Add a quantity of %s: ", userItem);
 		int userQuantity = input.getInt();
-		System.out.printf("Add %s x %d%n", userItem, userQuantity);
+//		System.out.printf("%nAdd %s x %d%n", userItem, userQuantity);
 		addItem(Category, userItem, userQuantity);
-		System.out.printf("Your %s list:%n", catName);
-		System.out.println(Category);
+		System.out.printf("%nYour %s list:%n", catName);
+		sortCategoryItems(Category);
+		System.out.println();
 	}
 
 	// Gets all items in a category and displays "items x quantity" alphabetically
@@ -51,9 +52,11 @@ public class Groceries {
 		HashMap<String, Integer> Frozen = new HashMap<>();
 		HashMap<String, Integer> Pantry = new HashMap<>();
 
+		System.out.println("*** Create a grocery list ***");
 		do {
-			System.out.println("1. Dairy\n2. Produce\n3. Deli\n4. Frozen\n5. Pantry\n");
-			System.out.print("Pick a category: ");
+			System.out.println("\nPick a category of grocery: ");
+			System.out.println("\n1. Dairy\n2. Produce\n3. Deli\n4. Frozen\n5. Pantry\n");
+			System.out.print("ENTER a category #: ");
 			int usersCategory = input.getInt();
 
 			if (usersCategory == 1){
@@ -69,11 +72,11 @@ public class Groceries {
 			} else {
 				GroceryList();
 			}
-			System.out.println("Would you like to:\n1. Add another item to your list \nor\n2. Finalize your grocery list?\nENTER [1 or 2]");
+			System.out.println("Would you like to:\n1. Add another item to your list \nor\n2. Finalize your grocery list?\nENTER [1] or [2]");
 			String userConfirmation = input.getString();
 			confirmation = userConfirmation.equals("1");
 		} while (confirmation);
-		System.out.println("Your final grocery list is: ");
+		System.out.println("\nYour final grocery list is: ");
 		sortCategoryItems(Dairy);
 		sortCategoryItems(Produce);
 		sortCategoryItems(Deli);
