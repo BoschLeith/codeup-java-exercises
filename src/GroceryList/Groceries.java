@@ -1,5 +1,7 @@
 package GroceryList;
 
+import util.Input;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -17,7 +19,21 @@ public class Groceries {
 		}
 	}
 
-	public static void main(String[] args) {
+	// Prompts the user for an item and quantity then addItem()
+	public static void addUserItem(HashMap<String, Integer> Category, String catName, Input input){
+		System.out.printf("%nAdd an item to %s%n", catName);
+		System.out.print("Enter name of item: ");
+		String userItem = input.getString();
+		System.out.printf("Add a quantity of %s: ", userItem);
+		int userQuantity = input.getInt();
+		System.out.printf("Add %s x %d%n", userItem, userQuantity);
+		addItem(Category, userItem, userQuantity);
+		System.out.printf("Your %s list:%n", catName);
+		System.out.println(Category);
+	}
+
+	public static void GroceryList(){
+		Input input = new Input();
 
 		HashMap<String, Integer> Dairy = new HashMap<>();
 		HashMap<String, Integer> Produce = new HashMap<>();
@@ -25,9 +41,26 @@ public class Groceries {
 		HashMap<String, Integer> Frozen = new HashMap<>();
 		HashMap<String, Integer> Pantry = new HashMap<>();
 
-		addItem(Dairy, "Milk", 2);
-		addItem(Dairy,"Ice Cream", 4);
-		getItems(Dairy);
+		System.out.println("1. Dairy\n2. Produce\n3. Deli\n4. Frozen\n5. Pantry\n");
+		System.out.print("Pick a category: ");
+		int usersCategory = input.getInt();
 
+		if (usersCategory == 1){
+			addUserItem(Dairy, "Dairy", input);
+		} else if (usersCategory == 2){
+			addUserItem(Produce, "Produce", input);
+		} else if (usersCategory == 3){
+			addUserItem(Deli, "Deli", input);
+		} else if (usersCategory == 4){
+			addUserItem(Frozen, "Frozen", input);
+		} else if (usersCategory == 5){
+			addUserItem(Pantry, "Pantry", input);
+		} else {
+			GroceryList();
+		}
+	}
+
+	public static void main(String[] args) {
+		GroceryList();
 	}
 }
