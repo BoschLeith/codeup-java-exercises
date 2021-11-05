@@ -13,13 +13,6 @@ public class Groceries {
 		category.put(item, quantity);
 	}
 
-	// Gets all items in a category and displays items=quantity
-	public static void getItems(HashMap<String, Integer> category){
-		for (Map.Entry<String, Integer> item: category.entrySet()){
-			System.out.println(item);
-		}
-	}
-
 	// Prompts the user for an item and quantity then addItem()
 	public static void addUserItem(HashMap<String, Integer> Category, String catName, Input input){
 		System.out.printf("%nAdd an item to %s%n", catName);
@@ -27,7 +20,6 @@ public class Groceries {
 		String userItem = input.getString();
 		System.out.printf("Add a quantity of %s: ", userItem);
 		int userQuantity = input.getInt();
-//		System.out.printf("%nAdd %s x %d%n", userItem, userQuantity);
 		addItem(Category, userItem, userQuantity);
 		System.out.printf("%nYour %s list:%n", catName);
 		sortCategoryItems(Category);
