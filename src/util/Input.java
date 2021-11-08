@@ -3,14 +3,13 @@ package util;
 import java.util.Scanner;
 
 public class Input {
-	private Scanner scanner;
+	private final Scanner scanner;
 
 	public Input(){
 		this.scanner = new Scanner(System.in);
 	}
 
 	public String getString(){
-//		System.out.print("Enter a string: ");
 		return this.scanner.nextLine();
 	}
 
@@ -33,10 +32,14 @@ public class Input {
 	}
 
 	public int getInt(){
-//		System.out.print("Enter an integer: ");
-		int userInput = Integer.parseInt(this.scanner.nextLine());
-//		System.out.printf("Your integer is: %d\n", userInput);
-		return userInput;
+		try{
+			return Integer.parseInt(getString());
+		} catch (NumberFormatException e){
+			System.out.println("Given input cannot be parsed as an int");
+			System.out.println("Enter an integer");
+//			e.printStackTrace();
+			return getInt();
+		}
 	}
 
 	public double getDouble(double min, double max){
@@ -52,8 +55,12 @@ public class Input {
 	}
 
 	public double getDouble(){
-//		System.out.print("Enter a double: ");
-//		System.out.printf("Your double is: %.2f\n", userInput);
-		return this.scanner.nextDouble();
+		try{
+			return Double.parseDouble(getString());
+		} catch (NumberFormatException e){
+			System.out.println("Given input cannot be parsed as an double");
+			e.printStackTrace();
+			return getDouble();
+		}
 	}
 }

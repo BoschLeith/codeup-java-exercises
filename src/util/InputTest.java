@@ -4,11 +4,9 @@ public class InputTest {
 	public static void main(String[] args) {
 		Input input = new Input();
 
-		System.out.println("You entered: " + input.getString());
-		System.out.println(input.yesNo());
-		input.getInt(1,10);
-		input.getInt();
-		input.getDouble(.01, 10);
+		System.out.println("Enter an integer");
+		int userInt = input.getInt();
+		System.out.printf("Your integer is: %d%n", userInt);
 		input.getDouble();
 	}
 }
