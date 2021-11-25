@@ -47,12 +47,15 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener {
 
 	// Ball
 		g.setColor(Color.yellow);
-		g.fillRect(ballPositionX, ballPositionY,20,20);
+		g.fillOval(ballPositionX, ballPositionY,20,20);
+
+		g.dispose();
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-
+		timer.start();
+		repaint();
 	}
 
 	@Override
